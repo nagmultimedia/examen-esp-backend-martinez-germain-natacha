@@ -13,7 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableFeignClients
-
 public class ApiMovieApplication {
 
     public static void main(String[] args) {
