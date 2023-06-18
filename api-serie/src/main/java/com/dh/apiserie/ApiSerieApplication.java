@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -23,7 +22,7 @@ public class ApiSerieApplication {
 		SpringApplication.run(ApiSerieApplication.class, args);
 	}
 
-	/*
+
 	@Bean
 	public CommandLineRunner loadData(SerieRepository repository) {
 		String baseUrl = "www.netflix.com/series";
@@ -67,12 +66,12 @@ public class ApiSerieApplication {
 
 
 
-			Serie serieA = new Serie( UUID.randomUUID().toString(),"Serie A", "terror", serieASeasons);
-			Serie serieB = new Serie( UUID.randomUUID().toString(),"Serie B", "comedia", serieBSeasons);
+			Serie serieA = new Serie( UUID.randomUUID().toString(),"Serie A", "Terror", serieASeasons);
+			Serie serieB = new Serie( UUID.randomUUID().toString(),"Serie B", "Comedia", serieBSeasons);
 			repository.save(serieA);
 			repository.save(serieB);
 
 		};
 	}
-*/
+
 }
