@@ -15,7 +15,7 @@ public class SerieService {
         this.serieRepository = serieRepository;
     }
 
-    public List<Serie> getSeriesBygGenre(String genre) {
+    public List<Serie> getSerieBygGenre(String genre) {
         return serieRepository.findAllByGenre(genre);
     }
 
