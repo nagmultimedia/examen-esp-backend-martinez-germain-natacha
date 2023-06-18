@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.List;
 import java.util.UUID;
 
-@ComponentScan({ "com.dh.apiserie.controller.*" })
 @SpringBootApplication
 @EnableMongoRepositories
 public class ApiSerieApplication {
@@ -66,8 +65,8 @@ public class ApiSerieApplication {
 
 
 
-			Serie serieA = new Serie( UUID.randomUUID().toString(),"Serie A", "Terror", serieASeasons);
-			Serie serieB = new Serie( UUID.randomUUID().toString(),"Serie B", "Comedia", serieBSeasons);
+			Serie serieA = new Serie( UUID.randomUUID().toString(),"The last of us", "Terror", serieASeasons);
+			Serie serieB = new Serie( UUID.randomUUID().toString(),"The office", "Comedia", serieBSeasons);
 			repository.save(serieA);
 			repository.save(serieB);
 
