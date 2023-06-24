@@ -1,26 +1,23 @@
-package com.dh.catalog.model.serie;
+package com.dh.apiserie.controller.SerieRequest;
 
+import com.dh.apiserie.model.Season;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "Series")
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class Serie {
+@Getter
+@Setter
+public class SerieRequest {
 
-    @Id
-    private String id;
     private String name;
     private String genre;
+    private String urlStream;
     private List<Season> seasons = new ArrayList<>();
 
 }

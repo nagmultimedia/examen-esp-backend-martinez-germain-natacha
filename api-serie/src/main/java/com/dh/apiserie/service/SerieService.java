@@ -3,6 +3,7 @@ package com.dh.apiserie.service;
 import com.dh.apiserie.model.Serie;
 import com.dh.apiserie.repository.SerieRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,12 +16,17 @@ public class SerieService {
         this.serieRepository = serieRepository;
     }
 
-    public List<Serie> getSerieBygGenre(String genre) {
-        return serieRepository.findAllByGenre(genre);
+    public List<Serie> findByGenre(String genre) {
+        return serieRepository.findByGenre(genre);
     }
 
-    public Serie createSerie(Serie serie) {
+    @Transactional
+    public Serie save(Serie serie) {
+        serieRepository.save(serie);
         return serieRepository.save(serie);
     }
 
+    public Serie getById(String id) throws Exception {
+        return serieRepository.findById(id).orElseThrow(() -> new Exception("No existe una serie con ese id"));
+    }
 }

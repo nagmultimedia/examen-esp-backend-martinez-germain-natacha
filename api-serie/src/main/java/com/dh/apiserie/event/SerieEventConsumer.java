@@ -7,7 +7,6 @@ import lombok.*;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +38,8 @@ public class SerieEventConsumer {
     @Builder
     public static
     class DocumentRequest {
-        @Size(min = 1, max = 10)
         private String name;
-        @Size(min = 1, max = 20)
         private String genre;
-        @Size(min = 1, max = 20)
         private String urlStream;
         private List<Season> seasons = new ArrayList<>();
     }

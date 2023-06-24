@@ -7,14 +7,15 @@ import com.dh.apiserie.repository.SerieRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
 @EnableMongoRepositories
+@EnableFeignClients
 public class ApiSerieApplication {
 
 	public static void main(String[] args) {
