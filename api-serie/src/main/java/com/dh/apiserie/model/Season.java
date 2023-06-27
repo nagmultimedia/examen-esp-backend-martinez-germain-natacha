@@ -1,6 +1,9 @@
 package com.dh.apiserie.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
@@ -11,13 +14,9 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Season {
-
-
 
     private Integer seasonNumber;
     private List<Chapter> chapters = new ArrayList<>();
-
 
 }

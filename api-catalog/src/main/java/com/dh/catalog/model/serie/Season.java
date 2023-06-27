@@ -13,11 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Season {
-
-
-
     private Integer seasonNumber;
     private List<Chapter> chapters = new ArrayList<>();
-
-
 }

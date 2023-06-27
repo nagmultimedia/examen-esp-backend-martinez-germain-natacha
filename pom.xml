@@ -13,7 +13,7 @@
 	<artifactId>api-examen</artifactId>
 	<version>0.0.1</version>
 	<name>api-examen</name>
-	<description> Examen Final de backend</description>
+	<description>Examen Final de backend</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

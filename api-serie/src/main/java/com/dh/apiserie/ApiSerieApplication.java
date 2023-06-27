@@ -4,18 +4,19 @@ import com.dh.apiserie.model.Chapter;
 import com.dh.apiserie.model.Season;
 import com.dh.apiserie.model.Serie;
 import com.dh.apiserie.repository.SerieRepository;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
 import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
 @EnableMongoRepositories
-@EnableFeignClients
+@EnableRabbit
 public class ApiSerieApplication {
 
 	public static void main(String[] args) {
@@ -63,8 +64,6 @@ public class ApiSerieApplication {
 					new Season(1, serieBSeasonAChapters),
 					new Season(2, serieBSeasonBChapters)
 			);
-
-
 
 			Serie serieA = new Serie( UUID.randomUUID().toString(),"The last of us", "Terror", serieASeasons);
 			Serie serieB = new Serie( UUID.randomUUID().toString(),"The office", "Comedia", serieBSeasons);
