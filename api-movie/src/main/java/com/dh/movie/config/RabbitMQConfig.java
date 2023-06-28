@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE_NAME = "backendExchange";
-    public static final String TOPIC_MOVIE_CREADA = "com.dh.backend.movieCreada";
+    public static final String TOPIC_MOVIE_CREADA = "backend.movieCreada";
 
     @Bean
     public TopicExchange appExchange() {

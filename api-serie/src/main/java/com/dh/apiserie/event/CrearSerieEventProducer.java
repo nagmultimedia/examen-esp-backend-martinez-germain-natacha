@@ -1,6 +1,7 @@
 package com.dh.apiserie.event;
 
 import com.dh.apiserie.config.RabbitMQConfig;
+import com.dh.apiserie.controller.SerieController;
 import com.dh.apiserie.model.Season;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,19 +22,8 @@ public class CrearSerieEventProducer {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void publishCrearSerieEvent(SerieData message){
+    public void publishCrearSerie(SerieController.SerieData message){
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_SERIE_CREADA,message);
-    }
-
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
-    public static class SerieData {
-        private String id;
-        private String name;
-        private String genre;
-        private List<Season> seasons = new ArrayList<>();
     }
 
 }

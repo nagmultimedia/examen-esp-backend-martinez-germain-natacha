@@ -1,5 +1,6 @@
 package com.dh.movie.event;
 import com.dh.movie.config.RabbitMQConfig;
+import com.dh.movie.controller.MovieController;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,21 +17,10 @@ public class crearMovieEventProducer {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void publishcrearMovie(MovieData message){
+    public void publishCrearMovie(MovieController.MovieData message){
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_MOVIE_CREADA,message);
     }
 
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
-    public static class MovieData {
-            private Long id;
-            private String name;
-            private String genre;
-            private String urlStream;
-        }
-
-    }
+}
 
 

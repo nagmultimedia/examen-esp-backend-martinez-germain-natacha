@@ -15,8 +15,10 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE_NAME = "backendExchange";
-    public static final String TOPIC_MOVIE_CREADA = "com.dh.backend.movieCreada";
+    public static final String TOPIC_MOVIE_CREADA = "backend.movieCreada";
     public static final String QUEUE_MOVIE_CREADA ="queueMovieCreada";
+    public static final String TOPIC_SERIE_CREADA = "backend.serieCreada";
+    public static final String QUEUE_SERIE_CREADA ="queueSerieCreada";
 
     @Bean
     public TopicExchange appExchange() {
@@ -29,8 +31,18 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Binding declareBindingSpecific(){
+    public Binding declareBindingSpecificM(){
         return BindingBuilder.bind(queueMovieCreada()).to(appExchange()).with(TOPIC_MOVIE_CREADA);
+    }
+
+    @Bean
+    public Queue queueSerieCreada(){
+        return new Queue(QUEUE_SERIE_CREADA);
+    }
+
+    @Bean
+    public Binding declareBindingSpecificS(){
+        return BindingBuilder.bind(queueSerieCreada()).to(appExchange()).with(TOPIC_SERIE_CREADA);
     }
 
 
